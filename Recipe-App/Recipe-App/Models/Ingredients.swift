@@ -1,0 +1,13 @@
+//
+//  Ingredients.swift
+//  Recipe-App
+//
+//  Created by Alikin Nikita Romanovich on 18.01.2023.
+//
+
+import Foundation
+
+struct Ingredients : Codable {
+    var name : String
+}
+
