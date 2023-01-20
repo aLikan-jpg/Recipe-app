@@ -7,29 +7,48 @@
 
 import UIKit
 
-class IngredientsTableViewController: UIViewController {
-
+class IngredientsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ingredients.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath) as? IngredientsCell else {return UITableViewCell()}
+        let ingredient = ingredients[indexPath.row]
+        cell.name.text = ingredient.name
+        cell.logo.image = UIImage(named: ingredient.name)
+        return cell
+    }
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var ingredients = [Ingredients]()
     var pickedIngredients  = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ingredients = DataLoad().ingredients
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: "IngredientsCell", bundle: nil), forCellReuseIdentifier: "ingredientCell")
     }
     
     // MARK: - Table view data source
     
-    //    override func numberOfSections(in tableView: UITableView) -> Int {
-    //        // #warning Incomplete implementation, return the number of sections
-    //        return 0
-    //    }
-    
+//        override func numberOfSections(in tableView: UITableView) -> Int {
+//            // #warning Incomplete implementation, return the number of sections
+//            return 0
+//        }
+//
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        // #warning Incomplete implementation, return the number of rows
 //        return ingredients.count
 //    }
-//
 //
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //
@@ -56,7 +75,7 @@ class IngredientsTableViewController: UIViewController {
 //        let ingredient = ingredients[indexPath.row].name
 //        pickedIngredients.append(ingredients[indexPath.row].name)
 //    }
-//
+
     
     
     

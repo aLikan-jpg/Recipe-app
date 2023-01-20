@@ -20,13 +20,14 @@ public class DataLoad {
         loadIngredientsData()
     }
     func loadIngredientsData () {
-        if let fileLocation = Bundle.main.url(forResource: "ingredients", withExtension: "json") {
+        if let fileLocation = Bundle.main.url(forResource: "db", withExtension: "json") {
             do {
                 let data = try Data(contentsOf: fileLocation)
                 let decoder = JSONDecoder()
                 let jsonData = try decoder.decode([Ingredients].self, from: data)
                 
                 self.ingredients = jsonData
+                print(self.ingredients)
             } catch {
                 print(error)
             }

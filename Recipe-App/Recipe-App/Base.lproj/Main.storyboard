@@ -26,21 +26,61 @@
             </objects>
             <point key="canvasLocation" x="-1397" y="-315"/>
         </scene>
-        <!--Ingredients Table View Controller-->
+        <!--Ingredients View Controller-->
         <scene sceneID="Deh-AM-asp">
             <objects>
-                <viewController id="wQ3-73-yQa" customClass="IngredientsTableViewController" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wQ3-73-yQa" customClass="IngredientsViewController" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8fM-Wt-4ry">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="igt-zo-dzt">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ytn-2H-jzJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="615.66666666666663"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="HfB-Md-OzI">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Q7-Un-sf3">
+                                        <rect key="frame" x="0.0" y="631.66666666666663" width="393" height="34.333333333333371"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ren-C0-rtn">
+                                                <rect key="frame" x="145.66666666666666" y="0.0" width="102" height="34.333333333333336"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.forward.fill" catalog="system" title="Button">
+                                                    <color key="baseForegroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ytn-2H-jzJ" firstAttribute="leading" secondItem="igt-zo-dzt" secondAttribute="leadingMargin" id="BW2-d9-6qS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2TZ-CO-EEO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="igt-zo-dzt" firstAttribute="top" secondItem="2TZ-CO-EEO" secondAttribute="top" id="5HD-Wb-H5m"/>
+                            <constraint firstItem="2TZ-CO-EEO" firstAttribute="trailing" secondItem="igt-zo-dzt" secondAttribute="trailing" id="OoV-8P-npX"/>
+                            <constraint firstItem="igt-zo-dzt" firstAttribute="leading" secondItem="2TZ-CO-EEO" secondAttribute="leading" id="Qru-sw-EDG"/>
+                            <constraint firstItem="2TZ-CO-EEO" firstAttribute="bottom" secondItem="igt-zo-dzt" secondAttribute="bottom" id="aK7-cT-g8N"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2kh-Js-KvV"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ytn-2H-jzJ" id="dZI-mr-Xnv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXh-FH-QtI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1503" y="406"/>
+            <point key="canvasLocation" x="-1503.0534351145038" y="405.63380281690144"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Wso-08-9fk">
@@ -79,12 +119,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.forward.fill" catalog="system" width="128" height="104"/>
         <image name="fork.knife.circle" catalog="system" width="128" height="123"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
         <image name="heart.circle" catalog="system" width="128" height="123"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
