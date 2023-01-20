@@ -8,6 +8,24 @@
 import UIKit
 
 class IngredientsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    let checkBox = CheckBoxButton(frame: CGRect(x: 70, y: 200, width: 40, height: 40))
+    var ingredients = [Ingredients]()
+    var pickedIngredients  = [String]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ingredients = DataLoad().ingredients
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.addSubview(checkBox)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapCheckBox))
+        checkBox.addGestureRecognizer(gesture)
+        tableView.register(UINib(nibName: "IngredientsCell", bundle: nil), forCellReuseIdentifier: "ingredientCell")
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredients.count
@@ -19,23 +37,13 @@ class IngredientsViewController: UIViewController, UITableViewDataSource, UITabl
         let ingredient = ingredients[indexPath.row]
         cell.name.text = ingredient.name
         cell.logo.image = UIImage(named: ingredient.name)
+//        cell.imageView!.image = UIImage(named: ingredient.name)
+//        cell.textLabel?.text = ingredient.name
         return cell
     }
     
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    var ingredients = [Ingredients]()
-    var pickedIngredients  = [String]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        ingredients = DataLoad().ingredients
-
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.register(UINib(nibName: "IngredientsCell", bundle: nil), forCellReuseIdentifier: "ingredientCell")
+    @objc func didTapCheckBox() {
+        checkBox.toggle()
     }
     
     // MARK: - Table view data source

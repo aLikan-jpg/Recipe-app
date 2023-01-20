@@ -20,6 +20,8 @@
 		5E11A3862978291900C32076 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3852978291900C32076 /* Ingredients.swift */; };
 		5E11A3882978292000C32076 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3872978292000C32076 /* Recipes.swift */; };
 		5E9C4D73297AAC0200900E18 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C4D72297AAC0200900E18 /* db.json */; };
+		5E9C4D75297AB74100900E18 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C4D74297AB74100900E18 /* Extensions.swift */; };
+		5E9C4D77297AC41F00900E18 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C4D76297AC41F00900E18 /* CheckBoxButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		5E11A3852978291900C32076 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		5E11A3872978292000C32076 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		5E9C4D72297AAC0200900E18 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = db.json; path = ../../../../../Desktop/db.json; sourceTree = "<group>"; };
+		5E9C4D74297AB74100900E18 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5E9C4D76297AC41F00900E18 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				5E11A3712978286E00C32076 /* Main.storyboard */,
 				5E11A3772978286E00C32076 /* Assets.xcassets */,
 				5E11A383297828DE00C32076 /* DataLoad.swift */,
+				5E9C4D74297AB74100900E18 /* Extensions.swift */,
+				5E9C4D76297AC41F00900E18 /* CheckBoxButton.swift */,
 				5E11A3892978292700C32076 /* Models */,
 				5E11A3792978286E00C32076 /* LaunchScreen.storyboard */,
 				5E9C4D72297AAC0200900E18 /* db.json */,
@@ -186,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E11A3702978286E00C32076 /* IngredientsViewController.swift in Sources */,
+				5E9C4D75297AB74100900E18 /* Extensions.swift in Sources */,
+				5E9C4D77297AC41F00900E18 /* CheckBoxButton.swift in Sources */,
 				5E11A36C2978286E00C32076 /* AppDelegate.swift in Sources */,
 				5E11A3882978292000C32076 /* Recipes.swift in Sources */,
 				5E11A36E2978286E00C32076 /* SceneDelegate.swift in Sources */,

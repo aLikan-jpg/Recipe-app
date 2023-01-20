@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1397" y="-315"/>
         </scene>
-        <!--Ingredients View Controller-->
+        <!--Pick Ingredients-->
         <scene sceneID="Deh-AM-asp">
             <objects>
                 <viewController id="wQ3-73-yQa" customClass="IngredientsViewController" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ytn-2H-jzJ">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="615.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="HfB-Md-OzI">
+                                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spagetti" id="HfB-Md-OzI">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -49,10 +49,13 @@
                                         <rect key="frame" x="0.0" y="631.66666666666663" width="393" height="34.333333333333371"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ren-C0-rtn">
-                                                <rect key="frame" x="145.66666666666666" y="0.0" width="102" height="34.333333333333336"/>
+                                                <rect key="frame" x="96.666666666666686" y="0.0" width="200" height="34.333333333333336"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="23Q-WZ-27b"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.forward.fill" catalog="system" title="Button">
+                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title="Search Recipe">
                                                     <color key="baseForegroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                             </button>
@@ -73,7 +76,7 @@
                             <constraint firstItem="2TZ-CO-EEO" firstAttribute="bottom" secondItem="igt-zo-dzt" secondAttribute="bottom" id="aK7-cT-g8N"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2kh-Js-KvV"/>
+                    <navigationItem key="navigationItem" title="Pick Ingredients" id="2kh-Js-KvV"/>
                     <connections>
                         <outlet property="tableView" destination="Ytn-2H-jzJ" id="dZI-mr-Xnv"/>
                     </connections>
@@ -119,11 +122,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.forward.fill" catalog="system" width="128" height="104"/>
         <image name="fork.knife.circle" catalog="system" width="128" height="123"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
         <image name="heart.circle" catalog="system" width="128" height="123"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="spagetti" width="626" height="626"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
