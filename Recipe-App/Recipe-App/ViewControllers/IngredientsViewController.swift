@@ -4,14 +4,13 @@
 //
 //  Created by Alikin Nikita Romanovich on 18.01.2023.
 //
-
 import UIKit
 
 class IngredientsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    let checkBox = CheckBoxButton(frame: CGRect(x: 70, y: 200, width: 40, height: 40))
+    //array of id in Cart
+    private var ingredientsInCart = [Int]()
+
     var ingredients = [Ingredients]()
     var pickedIngredients  = [String]()
     
@@ -21,9 +20,8 @@ class IngredientsViewController: UIViewController, UITableViewDataSource, UITabl
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.addSubview(checkBox)
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapCheckBox))
-        checkBox.addGestureRecognizer(gesture)
+        
+        
         tableView.register(UINib(nibName: "IngredientsCell", bundle: nil), forCellReuseIdentifier: "ingredientCell")
     }
     
@@ -37,14 +35,36 @@ class IngredientsViewController: UIViewController, UITableViewDataSource, UITabl
         let ingredient = ingredients[indexPath.row]
         cell.name.text = ingredient.name
         cell.logo.image = UIImage(named: ingredient.name)
-//        cell.imageView!.image = UIImage(named: ingredient.name)
-//        cell.textLabel?.text = ingredient.name
+        
         return cell
     }
     
-    @objc func didTapCheckBox() {
-        checkBox.toggle()
+    func isInCart(ingredient: Ingredients) -> Bool {
+//        return ingredientsInCart.contains()
+        return false
     }
+    
+    
+    
+//    //Add or Delete book from cart
+//    func toogleCartStatus(for ingredient: Ingredients) -> Bool {
+//        if let index = ingredientsInCart.firstIndex(of: ingredient.id) {
+//            ingredientsInCart.remove(at: index)
+//        } else {
+//            ingredientsInCart.append(ingredient.id)
+//        }
+//        return isInCart()
+//    }
+//    //Check if it really in cart array
+//    func isInCart(ingredient : Ingredients) -> Bool {
+//        return ingredientsInCart.contains(ingredient.id)
+//    }
+    
+    
+    
+    
+    
+    
     
     // MARK: - Table view data source
     
@@ -77,19 +97,6 @@ class IngredientsViewController: UIViewController, UITableViewDataSource, UITabl
 //
 //        return cell
 //    }
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let ingredient = ingredients[indexPath.row].name
-//        pickedIngredients.append(ingredients[indexPath.row].name)
-//    }
-
-    
-    
-    
-    private func fetchRecipe () {
-        
-    }
     
     /*
      // Override to support conditional editing of the table view.

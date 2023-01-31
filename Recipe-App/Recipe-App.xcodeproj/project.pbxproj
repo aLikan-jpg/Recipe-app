@@ -22,6 +22,8 @@
 		5E9C4D73297AAC0200900E18 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E9C4D72297AAC0200900E18 /* db.json */; };
 		5E9C4D75297AB74100900E18 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C4D74297AB74100900E18 /* Extensions.swift */; };
 		5E9C4D77297AC41F00900E18 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9C4D76297AC41F00900E18 /* CheckBoxButton.swift */; };
+		5EFC36DA2982CB3F00ADB052 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFC36D82982CB3F00ADB052 /* CartViewController.swift */; };
+		5EFC36DB2982CB3F00ADB052 /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EFC36D92982CB3F00ADB052 /* CartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		5E9C4D72297AAC0200900E18 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = db.json; path = ../../../../../Desktop/db.json; sourceTree = "<group>"; };
 		5E9C4D74297AB74100900E18 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5E9C4D76297AC41F00900E18 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
+		5EFC36D82982CB3F00ADB052 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		5EFC36D92982CB3F00ADB052 /* CartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				5E11A36F2978286E00C32076 /* IngredientsViewController.swift */,
+				5EFC36D82982CB3F00ADB052 /* CartViewController.swift */,
+				5EFC36D92982CB3F00ADB052 /* CartViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 				Base,
 			);
 			mainGroup = 5E11A35F2978286E00C32076;
+			packageReferences = (
+			);
 			productRefGroup = 5E11A3692978286E00C32076 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,6 +188,7 @@
 				5E11A37B2978286E00C32076 /* LaunchScreen.storyboard in Resources */,
 				5E11A3782978286E00C32076 /* Assets.xcassets in Resources */,
 				5E9C4D73297AAC0200900E18 /* db.json in Resources */,
+				5EFC36DB2982CB3F00ADB052 /* CartViewController.xib in Resources */,
 				5E11A3732978286E00C32076 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +207,7 @@
 				5E11A3882978292000C32076 /* Recipes.swift in Sources */,
 				5E11A36E2978286E00C32076 /* SceneDelegate.swift in Sources */,
 				5E0987DF2979E0460057B210 /* IngredientsCell.swift in Sources */,
+				5EFC36DA2982CB3F00ADB052 /* CartViewController.swift in Sources */,
 				5E11A3762978286E00C32076 /* Recipe_App.xcdatamodeld in Sources */,
 				5E11A3862978291900C32076 /* Ingredients.swift in Sources */,
 				5E11A384297828DE00C32076 /* DataLoad.swift in Sources */,
