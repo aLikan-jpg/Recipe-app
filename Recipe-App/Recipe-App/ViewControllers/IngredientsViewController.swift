@@ -10,9 +10,8 @@ class IngredientsViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableView: UITableView!
     //array of id in Cart
     private var ingredientsInCart = [Int]()
-
+    
     var ingredients = [Ingredients]()
-    var pickedIngredients  = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +19,9 @@ class IngredientsViewController: UIViewController, UITableViewDataSource, UITabl
 
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
+        //disable selection for all UITableViewCells
+        tableView.allowsSelection = false
+    
         tableView.register(UINib(nibName: "IngredientsCell", bundle: nil), forCellReuseIdentifier: "ingredientCell")
     }
     
@@ -35,37 +35,23 @@ class IngredientsViewController: UIViewController, UITableViewDataSource, UITabl
         let ingredient = ingredients[indexPath.row]
         cell.name.text = ingredient.name
         cell.logo.image = UIImage(named: ingredient.name)
-        
+        cell.customCheckBox?.didTapCartButton = { [weak self] () -> Bool in
+            return self?.toggleIngredientStatus(ingredient: ingredient) ?? false
+        }
         return cell
     }
-    
-    func isInCart(ingredient: Ingredients) -> Bool {
-//        return ingredientsInCart.contains()
-        return false
+
+    func toggleIngredientStatus(ingredient: Ingredients) -> Bool {
+        if let index = ingredientsInCart.firstIndex(of: ingredient.id) {
+            ingredientsInCart.remove(at: index)
+        } else {
+            ingredientsInCart.append(ingredient.id)
+        }
+        return isInCart(ingredient: ingredient)
     }
-    
-    
-    
-//    //Add or Delete book from cart
-//    func toogleCartStatus(for ingredient: Ingredients) -> Bool {
-//        if let index = ingredientsInCart.firstIndex(of: ingredient.id) {
-//            ingredientsInCart.remove(at: index)
-//        } else {
-//            ingredientsInCart.append(ingredient.id)
-//        }
-//        return isInCart()
-//    }
-//    //Check if it really in cart array
-//    func isInCart(ingredient : Ingredients) -> Bool {
-//        return ingredientsInCart.contains(ingredient.id)
-//    }
-    
-    
-    
-    
-    
-    
-    
+    func isInCart(ingredient: Ingredients) -> Bool {
+        return ingredientsInCart.contains(ingredient.id)
+    }
     // MARK: - Table view data source
     
 //        override func numberOfSections(in tableView: UITableView) -> Int {

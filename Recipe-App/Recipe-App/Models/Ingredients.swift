@@ -9,5 +9,6 @@ import Foundation
 
 struct Ingredients : Codable {
     var name : String
+    var id : Int
 }
 

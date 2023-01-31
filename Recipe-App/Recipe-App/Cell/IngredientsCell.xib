@@ -32,7 +32,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw6-WD-TOt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw6-WD-TOt" customClass="CheckBox" customModule="Recipe_App" customModuleProvider="target">
                                 <rect key="frame" x="262" y="8" width="50" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0Ru-aV-STz"/>
@@ -53,7 +53,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="checkBox" destination="bw6-WD-TOt" id="9Bb-fO-1q7"/>
+                <outlet property="customCheckBox" destination="bw6-WD-TOt" id="7be-hm-ccA"/>
                 <outlet property="logo" destination="Zvl-6q-oFs" id="YHh-g2-VeE"/>
                 <outlet property="name" destination="Pym-bY-iVE" id="7Xx-wE-qcM"/>
             </connections>

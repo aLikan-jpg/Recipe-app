@@ -11,7 +11,7 @@ class IngredientsCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var checkBox : CheckBox!
+    @IBOutlet weak var customCheckBox : CheckBox!
     
     
     override func awakeFromNib() {
