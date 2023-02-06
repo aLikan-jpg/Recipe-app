@@ -11,6 +11,11 @@ class IngredientsViewController: UIViewController, UITableViewDataSource, UITabl
     //array of id in Cart
     private var ingredientsInCart = [Int]()
     
+    @IBAction func cartButton(_ sender: Any) {
+        guard let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CartViewController") as? CartViewController else {return}
+        vc.cartIngredients = ingredients
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     var ingredients = [Ingredients]()
     
     override func viewDidLoad() {

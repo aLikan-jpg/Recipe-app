@@ -59,7 +59,19 @@
                             <constraint firstItem="igt-zo-dzt" firstAttribute="top" secondItem="2TZ-CO-EEO" secondAttribute="top" id="mUb-BH-qDw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Pick Ingredients" id="2kh-Js-KvV"/>
+                    <navigationItem key="navigationItem" title="Pick Ingredients" id="2kh-Js-KvV">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="wEt-H7-ovB">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DdE-jZ-Eoc">
+                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
+                                <connections>
+                                    <action selector="cartButton:" destination="wQ3-73-yQa" eventType="touchUpInside" id="pL1-4u-4Zp"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Ytn-2H-jzJ" id="dZI-mr-Xnv"/>
                     </connections>
@@ -67,6 +79,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXh-FH-QtI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1503.0534351145038" y="405.63380281690144"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="ska-uG-nFb">
+            <objects>
+                <viewController storyboardIdentifier="CartViewController" id="xZc-yt-9fc" customClass="CartViewController" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SO4-Jl-M2f">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6j1-z6-ii0">
+                                <rect key="frame" x="76" y="263.66666666666669" width="240" height="126"/>
+                                <color key="tintColor" red="0.94269317389999996" green="0.76667795169999997" blue="0.52728958699999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LyK-Sl-g8E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6j1-z6-ii0" firstAttribute="leading" secondItem="LyK-Sl-g8E" secondAttribute="leading" constant="76" id="6DR-iX-Hjx"/>
+                            <constraint firstItem="6j1-z6-ii0" firstAttribute="top" secondItem="LyK-Sl-g8E" secondAttribute="top" constant="203" id="cVn-rk-n97"/>
+                            <constraint firstItem="LyK-Sl-g8E" firstAttribute="trailing" secondItem="6j1-z6-ii0" secondAttribute="trailing" constant="77" id="dyC-dd-Tzt"/>
+                            <constraint firstItem="LyK-Sl-g8E" firstAttribute="bottom" secondItem="6j1-z6-ii0" secondAttribute="bottom" constant="428" id="hYS-7l-8lt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="foP-Dm-Uyo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2500" y="1178"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Wso-08-9fk">
@@ -105,6 +144,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="fork.knife.circle" catalog="system" width="128" height="123"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
         <image name="heart.circle" catalog="system" width="128" height="123"/>

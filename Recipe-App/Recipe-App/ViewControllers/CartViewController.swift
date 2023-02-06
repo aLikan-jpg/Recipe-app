@@ -8,7 +8,9 @@
 import UIKit
 
 class CartViewController: UIViewController {
-
+    
+    var cartIngredients = [Ingredients]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
